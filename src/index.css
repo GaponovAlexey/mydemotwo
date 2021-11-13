@@ -27,6 +27,13 @@ code {
   z-index: 5;
   padding: 1rem;
 }
+@media (min-width: 767px) {
+  .cart {
+    top: 5rem;
+    bottom: unset;
+  }
+}
+
 
 .card-content {
   flex-grow: 1;
@@ -37,3 +44,19 @@ code {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1rem;
 }
+
+.basket-list {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: rgb(255, 255, 255);
+  width: 50rem;
+  max-width: 95%;
+
+  box-shadow: inset -1px 3px 8px 5px #1f87ff, 2px 5px 16px 0px #0b33,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  animation: show 200ms ease-in-out;
+}
+
