@@ -1,11 +1,12 @@
 import React from 'react'
 
-export const GoodItem = ({
+export const GoItem = ({
   displayName,
   offerId,
   displayAssets,
   price,
   displayType,
+  addBasket,
 }) => {
   return (
     <div className='card'>
@@ -18,7 +19,13 @@ export const GoodItem = ({
           {displayType}
         </span>
         <div>
-          <button className='btn' >купить</button>
+          <span className='right' >{price.regularPrice}</span>
+          <button className='btn' onClick={() => addBasket({ 
+            id: offerId,
+            name: displayName,
+            })}>
+            купить
+          </button>
         </div>
       </div>
     </div>

@@ -1,11 +1,12 @@
 import React from 'react'
-import { GoodItem } from './GoodItem'
+import { GoItem } from './GoItem'
 
-export const GoodList = ({ state }) => {
+
+export const GoodList = ({ state, addBasket }) => {
   return (
     <div className='goods'>
       {state.map((data) => {
-        return <GoodItem key={data.offerId} {...data} />
+        return <GoItem addBasket={addBasket} key={data.offerId} {...data} />
       })}
     </div>
   )

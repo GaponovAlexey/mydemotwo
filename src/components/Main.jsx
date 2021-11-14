@@ -7,7 +7,31 @@ import { GoodList } from './MainCard/GoodList'
 export const Main = () => {
   const [state, setState] = useState([])
   const [isBasket, setIsBasket] = useState(false)
-  const [stateBasket, setStateBasket] = useState([{id:1, name:'yes'}])
+  const [stateBasket, setStateBasket] = useState([])
+
+
+  const addBasket = (item) => {
+    const findIndex = stateBasket.findIndex(ind => ind.id === item.id)
+    if(findIndex < 0 ){
+      const newOrder = {
+        ...item,
+        quntity: 1
+      }
+      setStateBasket([...stateBasket, newOrder])
+    } else {
+      const newStateBasket = stateBasket.map((order , index) => {
+        if(index === findIndex) {
+          return {
+            ...order,
+            quntity: order.quntity + 1
+          }
+        } else {
+          return order
+        }
+      })
+      setStateBasket(newStateBasket)
+    }
+  }
 
   useEffect(() => {
     fetch(API_URL, {
@@ -25,12 +49,19 @@ export const Main = () => {
     setIsBasket(!isBasket)
   }
 
+
+
+
   return (
     <div>
       <div className='main'>
-        <GoodList state={state} />
+        <GoodList state={state} addBasket={addBasket} />
       </div>
-      {!isBasket ? <Cart stateBasket={stateBasket.length} changeBasket={changeBasket} /> : ''}
+      {!isBasket ? (
+        <Cart stateBasket={stateBasket.length} changeBasket={changeBasket} />
+      ) : (
+        ''
+      )}
     </div>
   )
 }
