@@ -29,7 +29,7 @@ code {
 }
 @media (min-width: 767px) {
   .cart {
-    top: 5rem;
+    top: 5rem; 
     bottom: unset;
   }
 }

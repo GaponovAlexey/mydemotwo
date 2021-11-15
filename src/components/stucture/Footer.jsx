@@ -2,11 +2,11 @@ import React from 'react'
 
 export const Footer = () => {
   return (
-    <footer class='page-footer blue-grey lighten-5'>
-      <div class='footer-copyright'>
-        <div class='container'>
+    <footer className='page-footer blue-grey lighten-5'>
+      <div className='footer-copyright'>
+        <div className='container'>
           © 2014 Copyright Text
-          <a class='grey-text text-lighten-4 right' href='#!'>
+          <a className='grey-text text-lighten-4 right' href='#!'>
             More Links
           </a>
         </div>

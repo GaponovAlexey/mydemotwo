@@ -23,6 +23,7 @@ export const GoItem = ({
           <button className='btn' onClick={() => addBasket({ 
             id: offerId,
             name: displayName,
+            price:price.regularPrice,
             })}>
             купить
           </button>
